@@ -73,11 +73,11 @@ As this report involves player positions and/or expected responsibilities on the
 
 Here are shot charts for all five of the players considered from the Golden State Warriors.
 
-![Shot charts for all five players.](/Users/lucy/Desktop/workout01/images/gsw-shot-charts.png)
+![Shot charts for all five players.](/Users/lucy/Desktop/hw-stat133/workout01/images/gsw-shot-charts.pdf)
 
 When taking a closer look, Thompson and Curry's shot charts seem practically interchangeable. Curry understandably sees a higher concentration of shots outside the three-point line; but other than that, they seem to be filling the same role.
 
-![Shot data for Klay Thompson, a shooting guard.](/Users/lucy/Desktop/workout01/images/klay-thompson-shot-chart.png) ![Shot data for Stephen Curry, a point guard.](/Users/lucy/Desktop/workout01/images/stephen-curry-shot-chart.png)
+![Shot data for Klay Thompson, a shooting guard.](/Users/lucy/Desktop/hw-stat133/workout01/images/klay-thompson-shot-chart.pdf) ![Shot data for Stephen Curry, a point guard.](/Users/lucy/Desktop/hw-stat133/workout01/images/stephen-curry-shot-chart.pdf)
 
 ``` r
 overall_shooting_perc
