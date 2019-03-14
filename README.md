@@ -4,7 +4,7 @@ Private Repository for HW assignments of Stat 133 (Spring 2019)
 
 - Name: Lucy Brooke
 - Github username: lucybrooke
-- Email: lucybrooke[at]berkeley.edu
+- Email: lucybrooke@berkeley.edu
 - Lab section: 104
 - GSI: Colin Kou
 
