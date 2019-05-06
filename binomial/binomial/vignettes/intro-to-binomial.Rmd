@@ -1,0 +1,136 @@
+---
+title: "Intro to Package Binomial"
+author: "Lucy Brooke"
+date: "5/5/2019"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro to Package Binomial}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r setup, echo = TRUE}
+knitr::opts_chunk$set(echo = TRUE, error = TRUE, purl = FALSE)
+library(binomial)
+```
+
+## Welcome to the package `"binomial"`!
+
+`"binomial"` is a package that computes and visualizes different measures of given binomial distributions. 
+
+
+## Function bin_choose()
+
+This function allows the user to find the number of combinations in which given successes can occur in a fixed number of trials.
+
+For example:
+Say that you are flipping a fair coin. You want to know, given ten flips (n = 10), how many times is it possible to get tails six out of ten times (k = 6) ? Note: this function does not take into account the order of the successes. 
+
+```{r}
+bin_choose(n = 10, k = 6)
+```
+
+This means that there are 210 possible ways to get tails 6 times out of 10 flips.
+
+## Function bin_probability()
+
+This function allows the user to calculate the probability of success within a fixed number of trials. This is true as long as the probability of success remains the same for each iteration of the trial.
+
+So -- to continue from the last example -- imagine that you now want to know the probability that you will get six tails in ten flips. Here, success = 6, trials = 10, and, because this is a fair coin, prob = 0.5.
+
+```{r}
+bin_probability(success = 6, trials = 10, prob = 0.5)
+```
+
+So, if you were to flip a fair coin ten times, there is an approximately 20.50781% chance that you will get tails six times.
+
+**Note: for both bin_choose() and bin_probability(), the input for k/success can be a vector with multiple values.**
+
+## Function bin_distribution()
+
+This function allows users to visualize in a table the probabilities of all possible successes in a fixed number of trials. 
+
+To continue:
+```{r}
+bin_distribution(trials = 10, prob = 0.5)
+```
+
+In addition to seeing this information in a data frame, it is also possible to plot it!
+
+Taking our same table from above:
+```{r}
+distribution <- bin_distribution(trials = 10, prob = 0.5)
+plot(distribution)
+```
+
+## Function bin_cumulative()
+
+This function displays the same data table as bin_distribution(), except with an added column showing the cumulative probability of the given successes. 
+
+```{r}
+bin_cumulative(trials = 10, prob = 0.5)
+```
+
+To expand a little bit, the value in the cumulative column for success = 6 is representing the probability that in 10 flips, you get 0 tails, or 1 tail, or 2 tails, or 3 tails, etc -- all the way until 6. The high probability of ~82.8% makes sense.
+
+Just like bin_distribution(), this table can also be easily plotted.
+```{r}
+cumulative_distribution <- bin_cumulative(trials = 5, prob = 0.5)
+plot(cumulative_distribution)
+```
+
+##  Function bin_variable()
+
+This function checks that the input values for trials and probability are valid, and returns a printed list of those values. 
+
+```{r}
+bin_variable(trials = 10, prob = 0.5)
+```
+
+There is also a linked summary function that prints the listed summary measures of the given binomial variable. 
+
+It can be invoked like this:
+```{r}
+binomial_variable <- bin_variable(trials = 10, p = 0.5)
+binomial_summary <- summary(binomial_variable)
+binomial_summary
+```
+
+
+## Functions of Measures 
+
+**This is a group of several functions that compute various summary measures of the binomial distribution.**
+
+bin_mean() calculates the mean of the binomial distribution.
+```{r}
+bin_mean(trials = 10, p = 0.5)
+```
+
+bin_variance() calculates the variance of the binomial distribution.
+```{r}
+bin_variance(10, 0.5)
+```
+
+
+
+bin_mode() calculates the mode of the binomial distribution.
+```{r}
+bin_mode(10, 0.5)
+```
+
+12
+
+bin_skewness() calculates the skewness of the binomial distribution.
+```{r}
+bin_skewness(10, 0.5)
+bin_skewness(10, 0.3)
+bin_skewness(10, 0.8)
+```
+
+
+bin_kurtosis() calculates the kurtosis of the binomial distribution.
+```{r}
+bin_kurtosis(10, 0.5)
+```
+
+
